@@ -13,7 +13,7 @@ class AboutNil < Neo::Koan
       nil.some_method_nil_doesnt_know_about
     rescue Exception => ex
       # What exception has been caught?
-      assert_equal ex.class, ex.class
+      assert_equal NoMethodError , ex.class
 
       # What message was attached to the exception?
       # (HINT: replace __ with part of the error message.)
@@ -22,9 +22,9 @@ class AboutNil < Neo::Koan
   end
 
   def test_nil_has_a_few_methods_defined_on_it
-    assert_equal nil.nil?, nil.nil?
-    assert_equal nil.to_s, nil.to_s
-    assert_equal nil.inspect, nil.inspect
+    assert_equal true, nil.nil?
+    assert_equal "", nil.to_s
+    assert_equal "nil", nil.inspect
 
     # THINK ABOUT IT:
     #
